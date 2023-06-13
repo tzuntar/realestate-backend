@@ -1,0 +1,22 @@
+[package]
+name = "nepremicnine-backend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+log = "0.4.19"
+actix-web = "4"
+actix-identity = "0.5.2"
+actix-rt = "2.8.0"
+exonum-crypto = "1.0.0"
+
+# db stuff
+diesel = { version = "2.1.0", features = ["postgres"] }
+dotenvy = "0.15.7"
+
+# serialization
+serde = { version = "1.0.164", features = ["derive"] }
+serde_json = "1.0.96"
+serde_derive = "1.0.164"
