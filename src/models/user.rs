@@ -1,5 +1,7 @@
 use std::time::SystemTime;
+
 use diesel::prelude::*;
+
 use crate::schema::users;
 
 #[derive(Queryable, Selectable, AsChangeset, Identifiable)]
@@ -11,7 +13,7 @@ pub struct User {
     username: String,
     email: String,
     password: String,
-    registration_date: SystemTime
+    registration_date: Option<SystemTime>,
 }
 
 #[derive(Insertable)]
@@ -20,5 +22,5 @@ pub struct NewUserDto<'a> {
     name: &'a str,
     username: &'a str,
     email: &'a str,
-    password: &'a str
+    password: &'a str,
 }
